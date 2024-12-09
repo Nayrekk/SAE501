@@ -482,7 +482,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Logical - Layer 3 - Etudiants" id="FrnRip_hE7Bg7hhuBUzZ">
-    <mxGraphModel dx="1489" dy="887" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1389" dy="828" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="VUCYGWSbkUWKt1rVi4tE-0" />
         <mxCell id="VUCYGWSbkUWKt1rVi4tE-1" parent="VUCYGWSbkUWKt1rVi4tE-0" />
@@ -688,10 +688,7 @@
         <mxCell id="VUCYGWSbkUWKt1rVi4tE-71" value="" style="points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.145,0.145,0],[0.8555,0.145,0],[0.855,0.8555,0],[0.145,0.855,0]];verticalLabelPosition=bottom;html=1;verticalAlign=top;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=router;fillColor=#FAFAFA;strokeColor=#005073;fontStyle=1" parent="VUCYGWSbkUWKt1rVi4tE-1" vertex="1">
           <mxGeometry x="1014.25" y="215" width="50" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="sXXVm9IXKX7wxlW4idS--0" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="VUCYGWSbkUWKt1rVi4tE-1" source="VUCYGWSbkUWKt1rVi4tE-72" target="VUCYGWSbkUWKt1rVi4tE-53" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="VUCYGWSbkUWKt1rVi4tE-72" value="&lt;div&gt;REMFW&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;font color=&quot;#cc0000&quot; style=&quot;font-size: 10px;&quot;&gt;remfw.wsl2024.org&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.145,0.145,0],[0.8555,0.145,0],[0.855,0.8555,0],[0.145,0.855,0]];verticalLabelPosition=top;html=1;verticalAlign=bottom;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=router;fillColor=#FAFAFA;strokeColor=#005073;fontStyle=1;labelPosition=center;" parent="VUCYGWSbkUWKt1rVi4tE-1" vertex="1">
+        <mxCell id="VUCYGWSbkUWKt1rVi4tE-72" value="&lt;div&gt;REMFW&lt;/div&gt;" style="points=[[0.5,0,0],[1,0.5,0],[0.5,1,0],[0,0.5,0],[0.145,0.145,0],[0.8555,0.145,0],[0.855,0.8555,0],[0.145,0.855,0]];verticalLabelPosition=top;html=1;verticalAlign=bottom;aspect=fixed;align=center;pointerEvents=1;shape=mxgraph.cisco19.rect;prIcon=router;fillColor=#FAFAFA;strokeColor=#005073;fontStyle=1;labelPosition=center;" parent="VUCYGWSbkUWKt1rVi4tE-1" vertex="1">
           <mxGeometry x="523" y="220" width="50" height="50" as="geometry" />
         </mxCell>
         <mxCell id="VUCYGWSbkUWKt1rVi4tE-73" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;endArrow=none;endFill=0;entryX=0.019;entryY=0.525;entryDx=0;entryDy=0;entryPerimeter=0;strokeColor=#82B366;" parent="VUCYGWSbkUWKt1rVi4tE-1" source="VUCYGWSbkUWKt1rVi4tE-72" target="VUCYGWSbkUWKt1rVi4tE-52" edge="1">
@@ -939,7 +936,7 @@
         <mxCell id="sXXVm9IXKX7wxlW4idS--5" value="&lt;div&gt;&lt;div&gt;10.5.100.254&lt;/div&gt;&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontColor=#009900;" parent="VUCYGWSbkUWKt1rVi4tE-1" vertex="1" connectable="0">
           <mxGeometry x="548.0007362268252" y="276.00279179366015" as="geometry" />
         </mxCell>
-        <UserObject label="&lt;div&gt;&lt;font color=&quot;#009900&quot;&gt;8.8.5.2&lt;/font&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 10px;&quot; color=&quot;#cc0000&quot;&gt;inetsrv.worldskills.org&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;&quot; color=&quot;#cc0000&quot;&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;www.worldskills.org&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot; color=&quot;#cc0000&quot;&gt;ftp.worldskills.org&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;/span&gt;&lt;/div&gt;" link="&lt;div&gt;&lt;font color=&quot;#009900&quot;&gt;8.8.5.2&lt;/font&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 10px;&quot; color=&quot;#cc0000&quot;&gt;inetsrv.worldskills.org&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;&quot; color=&quot;#cc0000&quot;&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;www.worldskills.org&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot; color=&quot;#cc0000&quot;&gt;ftp.worldskills.org&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;/span&gt;&lt;/div&gt;" id="sXXVm9IXKX7wxlW4idS--7">
+        <UserObject label="&lt;div&gt;&lt;font color=&quot;#009900&quot;&gt;8.8.5.2&lt;/font&gt;&lt;/div&gt;" link="&lt;div&gt;&lt;font color=&quot;#009900&quot;&gt;8.8.5.2&lt;/font&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 10px;&quot; color=&quot;#cc0000&quot;&gt;inetsrv.worldskills.org&lt;br&gt;&lt;/font&gt;&lt;font style=&quot;&quot; color=&quot;#cc0000&quot;&gt;&lt;span style=&quot;font-size: 10px;&quot;&gt;www.worldskills.org&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot; color=&quot;#cc0000&quot;&gt;ftp.worldskills.org&lt;/font&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&lt;/span&gt;&lt;/div&gt;" id="sXXVm9IXKX7wxlW4idS--7">
           <mxCell style="text;whiteSpace=wrap;html=1;" parent="VUCYGWSbkUWKt1rVi4tE-1" vertex="1">
             <mxGeometry x="1065.25" y="105" width="130" height="80" as="geometry" />
           </mxCell>

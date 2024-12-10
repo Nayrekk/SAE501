@@ -1,0 +1,38 @@
+Dec 10 07:15:17.073 HYPERVISOR: Release 0.2.21-amd64/Linux (tag 2019071212)
+Dec 10 07:15:17.073 HYPERVISOR: Started on IP = localhost, TCP port = 50393.
+Dec 10 07:15:17.082 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 10 07:15:17.082 HYPERVISOR: exec_cmd: hypervisor working_dir /root/GNS3/projects/SAE501/project-files/dynamips 
+Dec 10 07:15:17.082 GENERAL: working_dir=/root/GNS3/projects/SAE501/project-files/dynamips
+Dec 10 07:15:17.082 HYPERVISOR: exec_cmd: hypervisor working_dir /root/GNS3/projects/SAE501/project-files/dynamips/176d6d81-5935-481d-a664-031d1ce3492e 
+Dec 10 07:15:17.082 GENERAL: working_dir=/root/GNS3/projects/SAE501/project-files/dynamips/176d6d81-5935-481d-a664-031d1ce3492e
+Dec 10 07:15:17.082 HYPERVISOR: exec_cmd: vm create R4 4 c2691 
+Dec 10 07:15:17.083 VM: VM R4 created.
+Dec 10 07:15:17.083 HYPERVISOR: exec_cmd: vm set_con_tcp_port R4 5003 
+Dec 10 07:15:17.083 HYPERVISOR: exec_cmd: c2691 get_mac_addr R4 
+Dec 10 07:15:17.084 HYPERVISOR: exec_cmd: vm set_ios R4 /root/GNS3/images/IOS/c2691-adventerprisek9-mz.124-5a.image 
+Dec 10 07:15:17.084 HYPERVISOR: exec_cmd: vm get_status R4 
+Dec 10 07:15:17.084 HYPERVISOR: exec_cmd: vm set_idle_pc R4 0x60283988 
+Dec 10 07:15:17.085 HYPERVISOR: exec_cmd: vm set_ram R4 192 
+Dec 10 07:15:17.085 HYPERVISOR: exec_cmd: vm set_nvram R4 256 
+Dec 10 07:15:17.086 HYPERVISOR: exec_cmd: vm set_disk0 R4 0 
+Dec 10 07:15:17.138 HYPERVISOR: exec_cmd: vm set_ios R4 /root/GNS3/images/IOS/c2691-adventerprisek9-mz.124-5a.image 
+Dec 10 07:15:28.664 HYPERVISOR: exec_cmd: vm set_ios R4 /root/GNS3/images/IOS/c2691-adventerprisek9-mz.124-5a.image 
+Dec 10 07:15:28.665 HYPERVISOR: exec_cmd: vm rename R4 REMFW 
+Dec 10 07:15:28.702 HYPERVISOR: exec_cmd: vm set_ios REMFW /root/GNS3/images/IOS/c2691-adventerprisek9-mz.124-5a.image 
+Dec 10 07:17:36.492 HYPERVISOR: exec_cmd: vm get_status REMFW 
+Dec 10 07:17:36.492 HYPERVISOR: exec_cmd: vm slot_add_binding REMFW 0 16 WIC-1T 
+Dec 10 07:17:36.493 HYPERVISOR: exec_cmd: vm get_status REMFW 
+Dec 10 07:17:36.493 HYPERVISOR: exec_cmd: vm slot_add_binding REMFW 0 32 WIC-1T 
+Dec 10 07:17:36.493 HYPERVISOR: exec_cmd: vm get_status REMFW 
+Dec 10 07:17:36.493 HYPERVISOR: exec_cmd: vm slot_add_binding REMFW 0 48 WIC-1T 
+Dec 10 07:17:54.474 HYPERVISOR: exec_cmd: nio create_udp udp-2dd73306-5a99-4328-9613-fba41e6decaf 10022 127.0.0.1 10023 
+Dec 10 07:17:54.696 HYPERVISOR: exec_cmd: vm slot_add_nio_binding REMFW 0 16 udp-2dd73306-5a99-4328-9613-fba41e6decaf 
+Dec 10 07:17:54.696 HYPERVISOR: exec_cmd: vm get_status REMFW 
+Dec 10 07:21:05.436 HYPERVISOR: exec_cmd: nio create_udp udp-5beb8b39-35e3-48b7-83dd-06374236be1b 10032 127.0.0.1 10033 
+Dec 10 07:21:05.437 HYPERVISOR: exec_cmd: vm slot_add_nio_binding REMFW 0 0 udp-5beb8b39-35e3-48b7-83dd-06374236be1b 
+Dec 10 07:21:05.438 HYPERVISOR: exec_cmd: vm get_status REMFW 
+Dec 10 07:55:41.155 HYPERVISOR: exec_cmd: vm set_ghost_status REMFW 2 
+Dec 10 07:55:41.157 HYPERVISOR: exec_cmd: vm set_ghost_file REMFW /root/GNS3/projects/SAE501/project-files/dynamips/c2691-adventerprisek9-mz.124-5a.image-192.ghost 
+Dec 10 07:55:41.159 HYPERVISOR: exec_cmd: vm get_status REMFW 
+Dec 10 07:55:41.186 HYPERVISOR: exec_cmd: vm set_config REMFW configs/i4_startup-config.cfg 
+Dec 10 07:55:41.187 HYPERVISOR: exec_cmd: vm start REMFW 

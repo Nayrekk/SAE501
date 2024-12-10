@@ -1,0 +1,71 @@
+Dec 10 07:15:09.047 HYPERVISOR: Release 0.2.21-amd64/Linux (tag 2019071212)
+Dec 10 07:15:09.047 HYPERVISOR: Started on IP = localhost, TCP port = 33867.
+Dec 10 07:15:09.058 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 10 07:15:09.059 HYPERVISOR: exec_cmd: hypervisor working_dir /root/GNS3/projects/SAE501/project-files/dynamips 
+Dec 10 07:15:09.059 GENERAL: working_dir=/root/GNS3/projects/SAE501/project-files/dynamips
+Dec 10 07:15:09.059 HYPERVISOR: exec_cmd: hypervisor working_dir /root/GNS3/projects/SAE501/project-files/dynamips/70a094fc-e52e-45a2-849d-ddc763894538 
+Dec 10 07:15:09.059 GENERAL: working_dir=/root/GNS3/projects/SAE501/project-files/dynamips/70a094fc-e52e-45a2-849d-ddc763894538
+Dec 10 07:15:09.060 HYPERVISOR: exec_cmd: vm create R1 1 c2691 
+Dec 10 07:15:09.060 VM: VM R1 created.
+Dec 10 07:15:09.060 HYPERVISOR: exec_cmd: vm set_con_tcp_port R1 5000 
+Dec 10 07:15:09.060 HYPERVISOR: exec_cmd: c2691 get_mac_addr R1 
+Dec 10 07:15:09.070 HYPERVISOR: exec_cmd: vm set_ios R1 /root/GNS3/images/IOS/c2691-adventerprisek9-mz.124-5a.image 
+Dec 10 07:15:09.071 HYPERVISOR: exec_cmd: vm get_status R1 
+Dec 10 07:15:09.071 HYPERVISOR: exec_cmd: vm set_idle_pc R1 0x60283988 
+Dec 10 07:15:09.071 HYPERVISOR: exec_cmd: vm set_ram R1 192 
+Dec 10 07:15:09.072 HYPERVISOR: exec_cmd: vm set_nvram R1 256 
+Dec 10 07:15:09.072 HYPERVISOR: exec_cmd: vm set_disk0 R1 0 
+Dec 10 07:15:09.123 HYPERVISOR: exec_cmd: vm set_ios R1 /root/GNS3/images/IOS/c2691-adventerprisek9-mz.124-5a.image 
+Dec 10 07:15:23.285 HYPERVISOR: exec_cmd: vm set_ios R1 /root/GNS3/images/IOS/c2691-adventerprisek9-mz.124-5a.image 
+Dec 10 07:15:23.285 HYPERVISOR: exec_cmd: vm rename R1 WANRTR 
+Dec 10 07:15:23.330 HYPERVISOR: exec_cmd: vm set_ios WANRTR /root/GNS3/images/IOS/c2691-adventerprisek9-mz.124-5a.image 
+Dec 10 07:16:24.597 HYPERVISOR: exec_cmd: vm get_status WANRTR 
+Dec 10 07:16:24.597 HYPERVISOR: exec_cmd: vm slot_add_binding WANRTR 0 16 WIC-1T 
+Dec 10 07:16:24.598 HYPERVISOR: exec_cmd: vm get_status WANRTR 
+Dec 10 07:16:24.598 HYPERVISOR: exec_cmd: vm slot_add_binding WANRTR 0 32 WIC-1T 
+Dec 10 07:16:24.598 HYPERVISOR: exec_cmd: vm get_status WANRTR 
+Dec 10 07:16:24.598 HYPERVISOR: exec_cmd: vm slot_add_binding WANRTR 0 48 WIC-1T 
+Dec 10 07:17:00.323 HYPERVISOR: exec_cmd: nio create_udp udp-0117c5e7-dd2b-44a4-997a-e133cd669c7e 10002 127.0.0.1 10003 
+Dec 10 07:17:00.555 HYPERVISOR: exec_cmd: vm slot_add_nio_binding WANRTR 0 0 udp-0117c5e7-dd2b-44a4-997a-e133cd669c7e 
+Dec 10 07:17:00.556 HYPERVISOR: exec_cmd: vm get_status WANRTR 
+Dec 10 07:17:06.910 HYPERVISOR: exec_cmd: nio create_udp udp-888f0522-52cf-4c64-b717-d08510a0d647 10008 127.0.0.1 10009 
+Dec 10 07:17:06.911 HYPERVISOR: exec_cmd: vm slot_add_nio_binding WANRTR 0 1 udp-888f0522-52cf-4c64-b717-d08510a0d647 
+Dec 10 07:17:06.912 HYPERVISOR: exec_cmd: vm get_status WANRTR 
+Dec 10 07:17:54.466 HYPERVISOR: exec_cmd: nio create_udp udp-87b49000-cd47-4320-996a-ff50f2b7af7b 10020 127.0.0.1 10021 
+Dec 10 07:17:54.467 HYPERVISOR: exec_cmd: vm slot_add_nio_binding WANRTR 0 16 udp-87b49000-cd47-4320-996a-ff50f2b7af7b 
+Dec 10 07:17:54.468 HYPERVISOR: exec_cmd: vm get_status WANRTR 
+Dec 10 07:19:43.916 HYPERVISOR: exec_cmd: vm get_status WANRTR 
+Dec 10 07:19:43.916 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding WANRTR 0 1 
+Dec 10 07:19:43.918 HYPERVISOR: exec_cmd: nio delete udp-888f0522-52cf-4c64-b717-d08510a0d647 
+Dec 10 07:19:50.286 HYPERVISOR: exec_cmd: nio create_udp udp-966f5498-c325-4c53-bf8c-d53e38b9a0f0 10008 127.0.0.1 10009 
+Dec 10 07:19:50.288 HYPERVISOR: exec_cmd: vm slot_add_nio_binding WANRTR 0 1 udp-966f5498-c325-4c53-bf8c-d53e38b9a0f0 
+Dec 10 07:19:50.288 HYPERVISOR: exec_cmd: vm get_status WANRTR 
+Dec 10 07:20:59.035 HYPERVISOR: exec_cmd: nio create_udp udp-0b140773-da54-4ea3-8219-2f332314e88f 10028 127.0.0.1 10029 
+Dec 10 07:20:59.036 HYPERVISOR: exec_cmd: vm slot_add_nio_binding WANRTR 0 32 udp-0b140773-da54-4ea3-8219-2f332314e88f 
+Dec 10 07:20:59.036 HYPERVISOR: exec_cmd: vm get_status WANRTR 
+Dec 10 07:21:52.176 HYPERVISOR: exec_cmd: vm get_status WANRTR 
+Dec 10 07:21:52.176 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding WANRTR 0 32 
+Dec 10 07:21:52.177 HYPERVISOR: exec_cmd: nio delete udp-0b140773-da54-4ea3-8219-2f332314e88f 
+Dec 10 07:21:58.827 HYPERVISOR: exec_cmd: nio create_udp udp-01ac4824-25c8-489c-b158-da11a92e92f4 10026 127.0.0.1 10027 
+Dec 10 07:21:58.828 HYPERVISOR: exec_cmd: vm slot_add_nio_binding WANRTR 0 32 udp-01ac4824-25c8-489c-b158-da11a92e92f4 
+Dec 10 07:21:58.829 HYPERVISOR: exec_cmd: vm get_status WANRTR 
+Dec 10 07:55:40.040 HYPERVISOR: exec_cmd: vm create Ghost 0 c2691 
+Dec 10 07:55:40.040 VM: VM Ghost created.
+Dec 10 07:55:40.041 HYPERVISOR: exec_cmd: vm set_ios Ghost /root/GNS3/images/IOS/c2691-adventerprisek9-mz.124-5a.image 
+Dec 10 07:55:40.042 HYPERVISOR: exec_cmd: vm set_ghost_status Ghost 1 
+Dec 10 07:55:40.042 HYPERVISOR: exec_cmd: vm set_ghost_file Ghost /root/GNS3/projects/SAE501/project-files/dynamips/c2691-adventerprisek9-mz.124-5a.image-192.ghost 
+Dec 10 07:55:40.042 HYPERVISOR: exec_cmd: vm set_ram Ghost 192 
+Dec 10 07:55:40.042 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Dec 10 07:55:40.053 HYPERVISOR: exec_cmd: vm set_config Ghost configs/i0_startup-config.cfg 
+Dec 10 07:55:40.053 HYPERVISOR: exec_cmd: vm start Ghost 
+Dec 10 07:55:40.700 HYPERVISOR: exec_cmd: vm get_status Ghost 
+Dec 10 07:55:40.701 HYPERVISOR: exec_cmd: vm stop Ghost 
+Dec 10 07:55:40.908 VM: VM Ghost shutdown.
+Dec 10 07:55:40.909 HYPERVISOR: exec_cmd: vm extract_config Ghost 
+Dec 10 07:55:40.910 HYPERVISOR: exec_cmd: vm clean_delete Ghost 
+Dec 10 07:55:40.910 VM: VM Ghost destroyed.
+Dec 10 07:55:40.912 HYPERVISOR: exec_cmd: vm set_ghost_status WANRTR 2 
+Dec 10 07:55:40.912 HYPERVISOR: exec_cmd: vm set_ghost_file WANRTR /root/GNS3/projects/SAE501/project-files/dynamips/c2691-adventerprisek9-mz.124-5a.image-192.ghost 
+Dec 10 07:55:40.913 HYPERVISOR: exec_cmd: vm get_status WANRTR 
+Dec 10 07:55:40.914 HYPERVISOR: exec_cmd: vm set_config WANRTR configs/i1_startup-config.cfg 
+Dec 10 07:55:40.914 HYPERVISOR: exec_cmd: vm start WANRTR 

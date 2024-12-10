@@ -1,0 +1,54 @@
+Dec 10 07:15:12.471 HYPERVISOR: Release 0.2.21-amd64/Linux (tag 2019071212)
+Dec 10 07:15:12.471 HYPERVISOR: Started on IP = localhost, TCP port = 33353.
+Dec 10 07:15:12.480 HYPERVISOR: exec_cmd: hypervisor version 
+Dec 10 07:15:12.480 HYPERVISOR: exec_cmd: hypervisor working_dir /root/GNS3/projects/SAE501/project-files/dynamips 
+Dec 10 07:15:12.480 GENERAL: working_dir=/root/GNS3/projects/SAE501/project-files/dynamips
+Dec 10 07:15:12.480 HYPERVISOR: exec_cmd: hypervisor working_dir /root/GNS3/projects/SAE501/project-files/dynamips/bbf3b4af-12e5-4cf7-a0cd-9872580cb6e2 
+Dec 10 07:15:12.480 GENERAL: working_dir=/root/GNS3/projects/SAE501/project-files/dynamips/bbf3b4af-12e5-4cf7-a0cd-9872580cb6e2
+Dec 10 07:15:12.481 HYPERVISOR: exec_cmd: vm create R3 3 c2691 
+Dec 10 07:15:12.481 VM: VM R3 created.
+Dec 10 07:15:12.481 HYPERVISOR: exec_cmd: vm set_con_tcp_port R3 5002 
+Dec 10 07:15:12.481 HYPERVISOR: exec_cmd: c2691 get_mac_addr R3 
+Dec 10 07:15:12.482 HYPERVISOR: exec_cmd: vm set_ios R3 /root/GNS3/images/IOS/c2691-adventerprisek9-mz.124-5a.image 
+Dec 10 07:15:12.482 HYPERVISOR: exec_cmd: vm get_status R3 
+Dec 10 07:15:12.482 HYPERVISOR: exec_cmd: vm set_idle_pc R3 0x60283988 
+Dec 10 07:15:12.483 HYPERVISOR: exec_cmd: vm set_ram R3 192 
+Dec 10 07:15:12.483 HYPERVISOR: exec_cmd: vm set_nvram R3 256 
+Dec 10 07:15:12.483 HYPERVISOR: exec_cmd: vm set_disk0 R3 0 
+Dec 10 07:15:12.666 HYPERVISOR: exec_cmd: vm set_ios R3 /root/GNS3/images/IOS/c2691-adventerprisek9-mz.124-5a.image 
+Dec 10 07:15:15.076 HYPERVISOR: exec_cmd: vm set_ios R3 /root/GNS3/images/IOS/c2691-adventerprisek9-mz.124-5a.image 
+Dec 10 07:15:39.730 HYPERVISOR: exec_cmd: vm set_ios R3 /root/GNS3/images/IOS/c2691-adventerprisek9-mz.124-5a.image 
+Dec 10 07:15:39.730 HYPERVISOR: exec_cmd: vm rename R3 EDGE2 
+Dec 10 07:15:39.769 HYPERVISOR: exec_cmd: vm set_ios EDGE2 /root/GNS3/images/IOS/c2691-adventerprisek9-mz.124-5a.image 
+Dec 10 07:15:41.884 HYPERVISOR: exec_cmd: vm set_ios EDGE2 /root/GNS3/images/IOS/c2691-adventerprisek9-mz.124-5a.image 
+Dec 10 07:17:06.918 HYPERVISOR: exec_cmd: nio create_udp udp-da96ab2b-d4fd-405c-805e-e536de9d3eb6 10010 127.0.0.1 10011 
+Dec 10 07:17:07.140 HYPERVISOR: exec_cmd: vm slot_add_nio_binding EDGE2 0 0 udp-da96ab2b-d4fd-405c-805e-e536de9d3eb6 
+Dec 10 07:17:07.141 HYPERVISOR: exec_cmd: vm get_status EDGE2 
+Dec 10 07:17:10.458 HYPERVISOR: exec_cmd: nio create_udp udp-d3898289-2978-4293-94fe-0acfe2125528 10014 127.0.0.1 10015 
+Dec 10 07:17:10.460 HYPERVISOR: exec_cmd: vm slot_add_nio_binding EDGE2 0 1 udp-d3898289-2978-4293-94fe-0acfe2125528 
+Dec 10 07:17:10.460 HYPERVISOR: exec_cmd: vm get_status EDGE2 
+Dec 10 07:19:43.923 HYPERVISOR: exec_cmd: vm get_status EDGE2 
+Dec 10 07:19:43.923 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding EDGE2 0 0 
+Dec 10 07:19:43.924 HYPERVISOR: exec_cmd: nio delete udp-da96ab2b-d4fd-405c-805e-e536de9d3eb6 
+Dec 10 07:20:03.532 HYPERVISOR: exec_cmd: vm get_status EDGE2 
+Dec 10 07:20:03.532 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding EDGE2 0 1 
+Dec 10 07:20:03.533 HYPERVISOR: exec_cmd: nio delete udp-d3898289-2978-4293-94fe-0acfe2125528 
+Dec 10 07:20:33.582 HYPERVISOR: exec_cmd: nio create_udp udp-9f818d65-731c-4c88-8492-7ecfe755f777 10016 127.0.0.1 10017 
+Dec 10 07:20:33.583 HYPERVISOR: exec_cmd: vm slot_add_nio_binding EDGE2 0 0 udp-9f818d65-731c-4c88-8492-7ecfe755f777 
+Dec 10 07:20:33.584 HYPERVISOR: exec_cmd: vm get_status EDGE2 
+Dec 10 07:20:50.214 HYPERVISOR: exec_cmd: vm get_status EDGE2 
+Dec 10 07:20:50.214 HYPERVISOR: exec_cmd: vm slot_add_binding EDGE2 0 16 WIC-1T 
+Dec 10 07:20:59.027 HYPERVISOR: exec_cmd: nio create_udp udp-f260bc06-81b6-48ea-8317-6fbe5a0c36dc 10026 127.0.0.1 10027 
+Dec 10 07:20:59.029 HYPERVISOR: exec_cmd: vm slot_add_nio_binding EDGE2 0 16 udp-f260bc06-81b6-48ea-8317-6fbe5a0c36dc 
+Dec 10 07:20:59.029 HYPERVISOR: exec_cmd: vm get_status EDGE2 
+Dec 10 07:21:52.171 HYPERVISOR: exec_cmd: vm get_status EDGE2 
+Dec 10 07:21:52.172 HYPERVISOR: exec_cmd: vm slot_remove_nio_binding EDGE2 0 16 
+Dec 10 07:21:52.172 HYPERVISOR: exec_cmd: nio delete udp-f260bc06-81b6-48ea-8317-6fbe5a0c36dc 
+Dec 10 07:21:58.835 HYPERVISOR: exec_cmd: nio create_udp udp-8f9f3f90-c647-4ccb-8d4a-2ced522b55ac 10028 127.0.0.1 10029 
+Dec 10 07:21:58.836 HYPERVISOR: exec_cmd: vm slot_add_nio_binding EDGE2 0 16 udp-8f9f3f90-c647-4ccb-8d4a-2ced522b55ac 
+Dec 10 07:21:58.836 HYPERVISOR: exec_cmd: vm get_status EDGE2 
+Dec 10 07:55:40.913 HYPERVISOR: exec_cmd: vm set_ghost_status EDGE2 2 
+Dec 10 07:55:40.914 HYPERVISOR: exec_cmd: vm set_ghost_file EDGE2 /root/GNS3/projects/SAE501/project-files/dynamips/c2691-adventerprisek9-mz.124-5a.image-192.ghost 
+Dec 10 07:55:40.915 HYPERVISOR: exec_cmd: vm get_status EDGE2 
+Dec 10 07:55:40.916 HYPERVISOR: exec_cmd: vm set_config EDGE2 configs/i3_startup-config.cfg 
+Dec 10 07:55:40.916 HYPERVISOR: exec_cmd: vm start EDGE2 

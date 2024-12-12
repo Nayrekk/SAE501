@@ -1,0 +1,119 @@
+EDGE1#sh run
+Building configuration...
+
+Current configuration : 1759 bytes
+!
+version 15.0
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname EDGE1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+no aaa new-model
+memory-size iomem 15
+!
+no ipv6 cef
+ip source-route
+ip cef
+!
+!
+!
+!
+ip domain name edge1.wsl2024.org
+multilink bundle-name authenticated
+!
+!
+!
+license udi pid CISCO1941/K9 sn FCZ152093FE
+!
+!
+username tp password 0 tp
+!
+redundancy
+!
+!
+controller SHDSL 0/0/0
+ termination cpe
+!
+ip ssh time-out 60
+ip ssh authentication-retries 5
+ip ssh version 1
+!
+!
+!
+!
+interface Loopback0
+ ip address 191.5.157.34 255.255.255.240
+!
+interface GigabitEthernet0/0
+ no ip address
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/0.13
+ encapsulation dot1Q 13
+ ip address 10.5.254.2 255.255.255.252
+!
+interface GigabitEthernet0/0.14
+ encapsulation dot1Q 14
+ ip address 91.5.222.97 255.255.255.252
+!
+interface GigabitEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/1.30
+ encapsulation dot1Q 300
+ ip address 10.5.254.9 255.255.255.252
+!
+router ospf 1
+ router-id 191.5.157.34
+ log-adjacency-changes
+ redistribute connected subnets
+ network 10.5.254.0 0.0.0.3 area 5
+ network 10.5.254.8 0.0.0.3 area 5
+!
+router bgp 65516
+ bgp log-neighbor-changes
+ neighbor 10.5.254.10 remote-as 65516
+ neighbor 10.5.254.10 update-source GigabitEthernet0/1.30
+ neighbor 91.5.222.98 remote-as 65530
+ !
+ address-family ipv4
+  no synchronization
+  network 10.5.254.8 mask 255.255.255.252
+  neighbor 10.5.254.10 activate
+  neighbor 91.5.222.98 activate
+  no auto-summary
+ exit-address-family
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+line aux 0
+line vty 0 4
+ login
+!
+scheduler allocate 20000 1000
+end
+
+EDGE1#

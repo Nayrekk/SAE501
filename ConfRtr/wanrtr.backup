@@ -1,0 +1,172 @@
+WANRTR#sh run
+Building configuration...
+
+Current configuration : 2703 bytes
+!
+! Last configuration change at 06:26:57 UTC Thu Dec 12 2024
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname WANRTR
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+ip cef
+!
+!
+!
+!
+
+
+!
+ip vrf INET
+ rd 65530:2
+ route-target export 65530:2
+ route-target import 65530:2
+!
+ip vrf MAN
+ rd 65530:1
+ route-target export 65530:1
+ route-target import 65530:1
+!
+!
+!
+!
+ip domain name wanrtr.wsl2024.org
+no ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+license udi pid CISCO1941/K9 sn FCZ1806C57K
+license accept end user agreement
+license boot module c1900 technology-package securityk9
+license boot module c1900 technology-package datak9
+!
+!
+username tp password 0 tp
+!
+redundancy
+!
+!
+!
+!
+!
+ip ssh time-out 60
+ip ssh authentication-retries 5
+ip ssh version 1
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ ip address 1.1.1.1 255.255.255.0
+!
+interface Embedded-Service-Engine0/0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet0/0
+ no ip address
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/0.15
+ encapsulation dot1Q 15
+ ip vrf forwarding MAN
+ ip address 10.5.254.5 255.255.255.252
+!
+interface GigabitEthernet0/0.16
+ encapsulation dot1Q 16
+ ip vrf forwarding INET
+ ip address 31.5.126.14 255.255.255.252
+!
+interface GigabitEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/1.13
+ encapsulation dot1Q 13
+ ip vrf forwarding MAN
+ ip address 10.5.254.1 255.255.255.252
+!
+interface GigabitEthernet0/1.14
+ encapsulation dot1Q 14
+ ip vrf forwarding INET
+ ip address 91.5.222.98 255.255.255.252
+!
+interface FastEthernet0/0/0
+ ip vrf forwarding MAN
+ ip address 10.116.5.1 255.255.255.252
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/1/0
+ ip address 8.8.5.254 255.255.255.240
+ duplex auto
+ speed auto
+!
+router ospf 1 vrf MAN
+ router-id 1.1.1.1
+ redistribute connected subnets
+ network 10.5.254.0 0.0.0.3 area 5
+ network 10.5.254.4 0.0.0.3 area 5
+ network 10.116.5.0 0.0.0.3 area 5
+!
+router bgp 65530
+ bgp log-neighbor-changes
+ !
+ address-family ipv4 vrf INET
+  network 31.5.126.12 mask 255.255.255.252
+  network 91.5.222.96 mask 255.255.255.252
+  redistribute connected
+  neighbor 31.5.126.13 remote-as 65516
+  neighbor 31.5.126.13 activate
+  neighbor 91.5.222.97 remote-as 65516
+  neighbor 91.5.222.97 activate
+ exit-address-family
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+line con 0
+line aux 0
+line 2
+ no activation-character
+ no exec
+ transport preferred none
+ transport output lat pad telnet rlogin lapb-ta mop udptn v120 ssh
+ stopbits 1
+line vty 0 4
+ login
+ transport input all
+!
+scheduler allocate 20000 1000
+!
+end
+
+WANRTR#

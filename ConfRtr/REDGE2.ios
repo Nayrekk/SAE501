@@ -1,0 +1,83 @@
+en
+conf t
+hostname EDGE2
+username tp password tp
+ip domain-name edge2.wsl2024.org
+
+! Configuration des interfaces
+interface GigabitEthernet0/0
+ no shutdown
+!
+
+interface GigabitEthernet0/0.15
+ encapsulation dot1Q 15
+ ip address 10.5.254.6 255.255.255.252
+ no shutdown
+ description Subnet towards provider (VLAN 15)
+!
+
+interface GigabitEthernet0/0.16
+ encapsulation dot1Q 16
+ ip address 31.5.126.13 255.255.255.252
+ no shutdown
+ description Public IP connection (VLAN 16)
+!
+
+interface GigabitEthernet0/1
+ no shutdown
+!
+
+interface GigabitEthernet0/1.30
+ encapsulation dot1Q 300
+ ip address 10.5.254.13 255.255.255.252
+ no shutdown
+ description iBGP connection to EDGE1 (VLAN 300)
+!
+
+interface GigabitEthernet0/1.33
+ encapsulation dot1Q 30
+ ip address 217.5.160.12 255.255.255.252
+ no shutdown
+ description HSRP VLAN 30 connection to EDGE1
+ standby version 2
+ standby 30 ip 217.5.160.14
+ standby 30 priority 100
+!
+
+interface GigabitEthernet0/1.20
+ encapsulation dot1Q 200
+ ip address 10.5.254.18 255.255.255.252
+ no shutdown
+ description Connection to CORE2 (VLAN 200)
+!
+
+interface Loopback0
+ ip address 191.5.157.35 255.255.255.240
+ no shutdown
+ description Loopback interface for OSPF and BGP
+!
+
+! Configuration OSPF
+router ospf 1
+ router-id 191.5.157.35
+ network 10.5.254.4 0.0.0.3 area 5
+ network 10.5.254.12 0.0.0.3 area 5
+ network 31.5.126.12 0.0.0.3 area 5
+ redistribute connected subnets
+!
+
+! Configuration BGP
+router bgp 65516
+ bgp log-neighbor-changes
+ neighbor 10.5.254.17 remote-as 65516
+ neighbor 10.5.254.17 update-source Gi0/1.30
+ neighbor 31.5.126.14 remote-as 65530
+ address-family ipv4
+  neighbor 10.5.254.17 activate
+  neighbor 31.5.126.14 activate
+  network 10.5.254.12 mask 255.255.255.252
+  network 31.5.126.12 mask 255.255.255.252
+ exit-address-family
+!
+
+exit

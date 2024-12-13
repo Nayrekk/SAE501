@@ -1,0 +1,163 @@
+! Last configuration change at 13:28:39 UTC Thu Dec 12 2024
+!
+version 15.5
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname EDGE2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+ethernet lmi ce
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip domain name edge2.wsl2024.org
+ip cef
+no ipv6 cef
+multilink bundle-name authenticated
+!
+!
+!
+license udi pid CISCO1941/K9 sn FCZ1427928C
+!
+!
+username tp password 0 tp
+!
+redundancy
+!
+!
+!
+!
+!
+!
+interface Loopback0
+ description Loopback interface for OSPF and BGP
+ ip address 191.5.157.35 255.255.255.240
+!
+interface Embedded-Service-Engine0/0
+ no ip address
+ shutdown
+!
+interface GigabitEthernet0/0
+ no ip address
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/0.15
+ description Subnet towards provider (VLAN 15)
+ encapsulation dot1Q 15
+ ip address 10.5.254.6 255.255.255.252
+!
+interface GigabitEthernet0/0.16
+ description Public IP connection (VLAN 16)
+ encapsulation dot1Q 16
+ ip address 31.5.126.13 255.255.255.252
+!
+interface GigabitEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/1.20
+ description Connection to CORE2 (VLAN 200)
+ encapsulation dot1Q 200
+ ip address 10.5.254.13 255.255.255.252
+!
+interface GigabitEthernet0/1.30
+ description iBGP connection to EDGE1 (VLAN 300)
+ encapsulation dot1Q 300
+ ip address 10.5.254.18 255.255.255.252
+!
+interface GigabitEthernet0/1.33
+ description HSRP VLAN 30 connection to EDGE1
+ encapsulation dot1Q 30
+ ip address 217.5.160.12 255.255.255.240
+ standby version 2
+ standby 30 ip 217.5.160.14
+!
+interface FastEthernet0/0/0
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/1/0
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+!
+router ospf 1
+ router-id 191.5.157.35
+ redistribute connected subnets
+ redistribute static subnets
+ network 10.5.254.4 0.0.0.3 area 5
+ network 10.5.254.12 0.0.0.3 area 5
+ network 31.5.126.12 0.0.0.3 area 5
+!
+router bgp 65516
+ bgp log-neighbor-changes
+ neighbor 10.5.254.17 remote-as 65516
+ neighbor 10.5.254.17 update-source GigabitEthernet0/1.30
+ neighbor 31.5.126.14 remote-as 65530
+ !
+ address-family ipv4
+  network 10.5.254.12 mask 255.255.255.252
+  network 31.5.126.12 mask 255.255.255.252
+  neighbor 10.5.254.17 activate
+  neighbor 31.5.126.14 activate
+ exit-address-family
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+ip route 10.5.0.0 255.255.255.0 10.5.254.14
+ip route 10.5.10.0 255.255.255.192 10.5.254.14
+ip route 10.5.20.0 255.255.254.0 10.5.254.14
+ip route 10.5.40.0 255.255.255.224 10.5.254.14
+ip route 10.5.50.0 255.255.255.224 10.5.254.14
+ip route 10.5.99.0 255.255.255.0 10.5.254.14
+ip route 217.5.160.0 255.255.255.240 10.5.254.14
+!
+!
+!
+!
+control-plane
+!
+!
+ vstack
+!
+line con 0
+line aux 0
+line 2
+ no activation-character
+ no exec
+ transport preferred none
+ transport output pad telnet rlogin lapb-ta mop udptn v120 ssh
+ stopbits 1
+line vty 0 4
+ login
+ transport input none
+!
+scheduler allocate 20000 1000
+!
+end
+
+EDGE2
